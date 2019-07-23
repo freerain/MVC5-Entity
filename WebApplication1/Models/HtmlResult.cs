@@ -17,6 +17,7 @@ namespace WebApplication1.Models
         {
             string fullHtmlCode = "<!DOCTYPE html><html><head>";
             fullHtmlCode += "<title>Главная страница</title>";
+
             fullHtmlCode += "<meta charset=utf-8 />";
             fullHtmlCode += "</head> <body>";
             fullHtmlCode += htmlCode;
