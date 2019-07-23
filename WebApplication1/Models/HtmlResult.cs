@@ -20,6 +20,7 @@ namespace WebApplication1.Models
             fullHtmlCode += "<meta charset=utf-8 />";
             fullHtmlCode += "</head> <body>";
             fullHtmlCode += htmlCode;
+
             fullHtmlCode += "</body></html>";
             context.HttpContext.Response.Write(fullHtmlCode);
         }
