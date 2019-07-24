@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Models;
@@ -14,17 +16,20 @@ namespace WebApplication1.Controllers
         BookContext db = new BookContext();
         public ActionResult Index()
         {
+            //// получаем из бд все объекты Book
+            //IEnumerable<Book> books = db.Books;
+            //// передаем все объекты в динамическое свойство Books в ViewBag
+            //ViewBag.Books = books;
+            //// возвращаем представление
+            return View(db.Books);
+        }
 
-            // получаем из бд все объекты Book
-            IEnumerable<Book> books = db.Books;
-            // передаем все объекты в динамическое свойство Books в ViewBag
+        // асинхронный метод
+        public async Task<ActionResult> BookList()
+        {
+            IEnumerable<Book> books = await db.Books.ToListAsync();
             ViewBag.Books = books;
-            
-
-            // возвращаем представление
-            return View();
-
-          
+            return View("Index");
         }
 
 
