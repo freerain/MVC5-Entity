@@ -12,6 +12,7 @@ namespace WebApplication1.Models
         // название книги
         public string Name { get; set; }
         // автор книги
+
         public string Author { get; set; }
         // цена
         public int Price { get; set; }
